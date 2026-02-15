@@ -12,8 +12,12 @@ if (-not (Test-Path $copsFolder)) {
     
     Invoke-WebRequest -Uri $nupkgUrl -OutFile $nupkgPath -UseBasicParsing
     $extractPath = Join-Path ([System.IO.Path]::GetTempPath()) "$packageName-extract"
-    Expand-Archive -Path $nupkgPath -DestinationPath $extractPath -Force
-    
+
+    if (-not ("System.IO.Compression.ZipFile" -as [type])) {
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+    }
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($nupkgPath, $extractPath)
+
     # Copy only the target framework DLLs
     Copy-Item -Path (Join-Path $extractPath "lib/$targetFramework/*") -Destination $copsFolder -Force
     

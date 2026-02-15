@@ -1,7 +1,7 @@
 Param([Hashtable] $parameters)
 
 # Configuration
-$scriptUrl = "https://raw.githubusercontent.com/ALCops/AL-Go/v1.1.0/scripts/Install-ALCops.ps1"
+$scriptUrl = "https://raw.githubusercontent.com/ALCops/AL-Go/v1.0.0/scripts/Install-ALCops.ps1"
 $packageVersion = ""          # "" = latest stable, "alpha", "beta", or "1.2.3"
 $targetFramework = ""
 

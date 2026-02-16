@@ -4,6 +4,7 @@
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
+  "enableCodeCops": true,
   "customCodeCops": [
     ".alcops/net8.0/ALCops.ApplicationCop.dll",
     ".alcops/net8.0/ALCops.DocumentationCop.dll",

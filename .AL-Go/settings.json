@@ -4,14 +4,15 @@
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
+  "failOn": "warning",
   "enableCodeCops": true,
   "customCodeCops": [
-    ".alcops/net8.0/ALCops.ApplicationCop.dll",
-    ".alcops/net8.0/ALCops.DocumentationCop.dll",
-    ".alcops/net8.0/ALCops.FormattingCop.dll",
-    ".alcops/net8.0/ALCops.LinterCop.dll",
-    ".alcops/net8.0/ALCops.PlatformCop.dll",
-    ".alcops/net8.0/ALCops.TestAutomationCop.dll",
-    ".alcops/net8.0/ALCops.Common.dll"
+    ".alcops/ALCops.ApplicationCop.dll",
+    ".alcops/ALCops.DocumentationCop.dll",
+    ".alcops/ALCops.FormattingCop.dll",
+    ".alcops/ALCops.LinterCop.dll",
+    ".alcops/ALCops.PlatformCop.dll",
+    ".alcops/ALCops.TestAutomationCop.dll",
+    ".alcops/ALCops.Common.dll"
   ]
 }

@@ -4,6 +4,7 @@
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
+  "vsixFile": "latest",
   "failOn": "warning",
   "enableCodeCops": true,
   "customCodeCops": [
@@ -12,6 +13,7 @@
     ".alcops/ALCops.FormattingCop.dll",
     ".alcops/ALCops.LinterCop.dll",
     ".alcops/ALCops.PlatformCop.dll",
-    ".alcops/ALCops.TestAutomationCop.dll"
+    ".alcops/ALCops.TestAutomationCop.dll",
+    ".alcops/ALCops.Common.dll"
   ]
 }

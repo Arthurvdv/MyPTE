@@ -5,8 +5,12 @@
 pageextension 50100 CustomerListExt extends "Customer List"
 {
     trigger OnOpenPage();
+    var
+        Customer: Record Customer;
     begin
         Message('App published: Hello world');
+
+        Customer.LockTable();
 
         if true then;
     end;

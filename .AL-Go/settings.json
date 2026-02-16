@@ -12,7 +12,6 @@
     ".alcops/ALCops.FormattingCop.dll",
     ".alcops/ALCops.LinterCop.dll",
     ".alcops/ALCops.PlatformCop.dll",
-    ".alcops/ALCops.TestAutomationCop.dll",
-    ".alcops/ALCops.Common.dll"
+    ".alcops/ALCops.TestAutomationCop.dll"
   ]
 }

@@ -1,5 +1,13 @@
 Param([Hashtable] $parameters)
 
+Write-Host "--- PipelineInitialize Parameters ---"
+if ($parameters -and $parameters.Count -gt 0) {
+    $parameters.GetEnumerator() | ForEach-Object { Write-Host "  $($_.Key) = $($_.Value)" }
+} else {
+    Write-Host "  (none)"
+}
+Write-Host "---"
+
 # Configuration
 $scriptUrl = "https://raw.githubusercontent.com/ALCops/AL-Go/v1.0.0/scripts/Install-ALCops.ps1"
 $packageVersion = "beta"          # "" = latest stable, "alpha", "beta", or "1.2.3"

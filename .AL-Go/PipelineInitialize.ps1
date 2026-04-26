@@ -9,7 +9,7 @@ if ($parameters -and $parameters.Count -gt 0) {
 Write-Host "---"
 
 Write-Host "--- Resolved artifact URL ---"
-    Write-Host $env:artifact
+    Write-Host $($env:artifact)
 Write-Host "---"
 
 # Configuration

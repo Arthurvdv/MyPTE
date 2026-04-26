@@ -8,6 +8,10 @@ if ($parameters -and $parameters.Count -gt 0) {
 }
 Write-Host "---"
 
+Write-Host "--- Resolved artifact URL ---"
+    Write-Host $env:artifact
+Write-Host "---"
+
 # Configuration
 $scriptUrl = "https://raw.githubusercontent.com/ALCops/AL-Go/v1.0.0/scripts/Install-ALCops.ps1"
 $packageVersion = "beta"          # "" = latest stable, "alpha", "beta", or "1.2.3"

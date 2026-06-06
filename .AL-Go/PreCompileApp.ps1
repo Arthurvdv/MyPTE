@@ -66,4 +66,4 @@ else {
 #     $compilationParams.Value.CustomAnalyzers = $resolved
 #     Write-Host "Resolved CustomAnalyzers paths to absolute:"
 #     $resolved | ForEach-Object { Write-Host "  $_" }
-}
+# }

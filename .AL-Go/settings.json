@@ -6,6 +6,9 @@
   "bcptTestFolders": [],
   "vsixFile": "latest",
   "failOn": "warning",
+  "workspaceCompilation": {
+    "enabled": true
+  },
   "enableCodeCops": true,
   "customCodeCops": [
     ".alcops/ALCops.ApplicationCop.dll",

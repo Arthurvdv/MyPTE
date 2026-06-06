@@ -40,30 +40,30 @@ else {
     Write-Host "ALCops analyzers installed successfully."
 }
 
-# # https://github.com/microsoft/AL-Go/issues/2235
-# # Workaround: altool's --customanalyzers forwards a comma-separated list to
-# # alc.exe and only resolves the FIRST entry against the project root. The rest
-# # stay as relative paths and alc.exe then resolves them against the per-app
-# # project folder, where '.alcops' does not exist.
-# # Rewrite CustomAnalyzers in $compilationParams to absolute paths so alc.exe
-# # can find every DLL regardless of which project it's compiling.
-# if ($compilationParams -and $compilationParams.Value.CustomAnalyzers) {
-#     $resolved = @()
-#     foreach ($cop in $compilationParams.Value.CustomAnalyzers) {
-#         if ([System.IO.Path]::IsPathRooted($cop)) {
-#             $resolved += $cop
-#             continue
-#         }
-#         $abs = Join-Path $env:GITHUB_WORKSPACE $cop
-#         if (Test-Path $abs) {
-#             $resolved += (Resolve-Path -LiteralPath $abs).Path
-#         }
-#         else {
-#             Write-Host "::Warning::Custom analyzer not found at expected path: $abs"
-#             $resolved += $abs
-#         }
-#     }
-#     $compilationParams.Value.CustomAnalyzers = $resolved
-#     Write-Host "Resolved CustomAnalyzers paths to absolute:"
-#     $resolved | ForEach-Object { Write-Host "  $_" }
-# }
+# https://github.com/microsoft/AL-Go/issues/2235
+# Workaround: altool's --customanalyzers forwards a comma-separated list to
+# alc.exe and only resolves the FIRST entry against the project root. The rest
+# stay as relative paths and alc.exe then resolves them against the per-app
+# project folder, where '.alcops' does not exist.
+# Rewrite CustomAnalyzers in $compilationParams to absolute paths so alc.exe
+# can find every DLL regardless of which project it's compiling.
+if ($compilationParams -and $compilationParams.Value.CustomAnalyzers) {
+    $resolved = @()
+    foreach ($cop in $compilationParams.Value.CustomAnalyzers) {
+        if ([System.IO.Path]::IsPathRooted($cop)) {
+            $resolved += $cop
+            continue
+        }
+        $abs = Join-Path $env:GITHUB_WORKSPACE $cop
+        if (Test-Path $abs) {
+            $resolved += (Resolve-Path -LiteralPath $abs).Path
+        }
+        else {
+            Write-Host "::Warning::Custom analyzer not found at expected path: $abs"
+            $resolved += $abs
+        }
+    }
+    $compilationParams.Value.CustomAnalyzers = $resolved
+    Write-Host "Resolved CustomAnalyzers paths to absolute:"
+    $resolved | ForEach-Object { Write-Host "  $_" }
+}
